@@ -17,39 +17,70 @@ char* concat(const char *s1, const char *s2)
 	return result;
 }
 
-char *reverse(char input[100])
-{	
-	char temp_string[100] = "";
-	for (unsigned i = strlen(input); i-- > 0;)
-	{
-		append(temp_string, input[i]);
-//		printf("\n Temp_string is: %s", temp_string);
-	} 
-	return temp_string;
-}
+//char *reverse(char* input)
+//{	
+//	char* temp_string;
+//	for (unsigned i = strlen(input); i-- > 0;)
+//	{
+//		append(temp_string, input[i]);
+////		printf("\n Temp_string is: %s", temp_string);
+//	} 
+//	return temp_string;
+//}
 
 
 int main(int argc, char *argv[]) {
-//	char *test = "Test";
-//	printf("\n The reverse of %s is: %s", test, reverse(test));
-//	printf("\n Concatenate: %s", concat("Yup", "No"));
+
 
 	char* tester = "";
 	char* original = "";
+	char* with_spaces = "";
 	
-	for(int i = 0; i < sizeof(argv); i++)
+//	char* words[] = {"racecar"};
+	int num_words = sizeof(argv)/sizeof(argv[0]);
+	
+	for(int i = 0; i < num_words; i++)
 	{
-		concat(original, argv[i]);
+		original = concat(original, argv[i]);
+		if(i == num_words - 1){
+			with_spaces = concat(with_spaces, argv[i]);
+		}
+		else{
+			char* temp = " ";
+			temp = concat(argv[i]," ");
+			with_spaces = concat(with_spaces, temp);
+
+		}
+			}
+ 	
+	int l = 0;
+	int r = strlen(original) - 1;
+	
+	while (r > l)
+	{
+		if (original[l++] != original[r--])
+		{
+			printf("\"%s\" is NOT a palindrome!\n", with_spaces);
+			return 0;
+		}
+		
 	}
 	
-	tester = reverse(original);
+	printf("\"%s\" is a palindrome!\n", with_spaces);
 	
-	if (strcmp(tester, original) == 0)
-	{
-		printf("\"%s\" is a paildrome!\n", original);
-	}
-	else 
-	{
-		printf("\"%s\" is NOT a palindrome!\n", original);	
-	}
+//	tester = reverse(original);
+//	printf("\n original is: %s", original);
+//	printf("\n the tester is: %s \n", tester);
+//
+//	free(original);
+//	
+//	if (strcmp(tester, original) == 0)
+//	{
+//		printf("\"%s\" is a palindrome!\n", with_spaces);
+//	}
+//	else 
+//	{
+//		printf("\"%s\" is NOT a palindrome!\n", with_spaces);	
+//	}
+		
 }
