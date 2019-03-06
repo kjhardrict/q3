@@ -37,9 +37,9 @@ int main(int argc, char *argv[]) {
 	char* with_spaces = "";
 	
 //	char* words[] = {"racecar"};
-	int num_words = sizeof(argv)/sizeof(argv[0]);
+	int num_words = (sizeof(argv)-1)/sizeof(argv[1]);
 	
-	for(int i = 0; i < num_words; i++)
+	for(int i = 1; i < num_words; i++)
 	{
 		original = concat(original, argv[i]);
 		if(i == num_words - 1){
