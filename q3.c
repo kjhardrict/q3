@@ -36,13 +36,17 @@ int main(int argc, char *argv[]) {
 	char* original = "";
 	char* with_spaces = "";
 	
-//	char* words[] = {"racecar"};
+//	char* arg[] = {"/palin", "racecar", "yup", "absolutely"};
+	
 	int num_words = (sizeof(argv)-1)/sizeof(argv[1]);
 	
-	for(int i = 1; i < num_words; i++)
+	printf("\nnum_words is: %d\n", num_words);
+	
+	for(int i = 1; i < num_words + 1; i++)
 	{
 		original = concat(original, argv[i]);
-		if(i == num_words - 1){
+		
+		if(i == num_words){
 			with_spaces = concat(with_spaces, argv[i]);
 		}
 		else{
