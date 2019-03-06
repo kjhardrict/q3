@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
 	
 	int num_words = (sizeof(argv)-1)/sizeof(argv[1]);
 	
-	printf("\nnum_words is: %d\n", num_words);
+//	printf("\nnum_words is: %d\n", num_words);
 	
 	for(int i = 1; i < num_words + 1; i++)
 	{
