@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
 	char* original = "";
 	char* with_spaces = "";
 	
-//	char* arg[] = {"/palin", "racecar", "yup", "absolutely"};
+//	char* arg2[] = {"/palin", "racecar"};
 	
 	int num_words = (sizeof(argv)-1)/sizeof(argv[1]);
 	
