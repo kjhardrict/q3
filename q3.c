@@ -29,33 +29,53 @@ char* concat(const char *s1, const char *s2)
 //}
 
 
-int main(int argc, char *argv[]) {
+int main(int argc, char** argv) {
 
 
 	char* tester = "";
 	char* original = "";
 	char* with_spaces = "";
 	
-//	char* arg2[] = {"/palin", "racecar"};
-	
-	int num_words = (sizeof(argv)-1)/sizeof(argv[1]);
-	
-//	printf("\nnum_words is: %d\n", num_words);
-	
-	for(int i = 1; i < num_words + 1; i++)
-	{
-		original = concat(original, argv[i]);
-		
-		if(i == num_words){
-			with_spaces = concat(with_spaces, argv[i]);
-		}
-		else{
-			char* temp = " ";
-			temp = concat(argv[i]," ");
-			with_spaces = concat(with_spaces, temp);
+//    char* arg2[] = {"/palin", "racecar", "racecar"};
+//
+//        int num_words = (sizeof(arg2)-1)/sizeof(argv[1]);
+//
+//
+//        for(int i = 1; i < num_words + 1; i++)
+//        {
+//            original = concat(original, arg2[i]);
+//
+//            if(i == num_words){
+//                with_spaces = concat(with_spaces, arg2[i]);
+//            }
+//            else{
+//                char* temp = " ";
+//                temp = concat(arg2[i]," ");
+//                with_spaces = concat(with_spaces, temp);
+//
+//            }
+//                }
+//
 
-		}
-			}
+
+
+//    int num_words = (sizeof(argv)-1)/sizeof(argv[1]);
+    int num_words = argc - 1;
+    
+    for(int i = 1; i < num_words + 1; i++)
+    {
+        original = concat(original, argv[i]);
+
+        if(i == num_words){
+            with_spaces = concat(with_spaces, argv[i]);
+        }
+        else{
+            char* temp = " ";
+            temp = concat(argv[i]," ");
+            with_spaces = concat(with_spaces, temp);
+
+        }
+            }
  	
 	int l = 0;
 	int r = strlen(original) - 1;
